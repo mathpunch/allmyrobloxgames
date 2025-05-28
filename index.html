@@ -5,21 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>My Roblox Games</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.0.3/src/regular/style.css" rel="stylesheet">
   <style>
     body {
+      background: linear-gradient(135deg, #181823 60%, #23243b 100%);
       min-height: 100vh;
-      margin: 0;
       font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      margin: 0;
       color: #fff;
-      background: linear-gradient(-45deg, #23243b, #181823, #313250, #4361ee);
-      background-size: 400% 400%;
-      animation: gradientBG 16s ease infinite;
-    }
-    @keyframes gradientBG {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
     }
     .container {
       max-width: 700px;
@@ -33,173 +25,80 @@
     header {
       text-align: center;
       margin-bottom: 2rem;
-      animation: fadein 1s cubic-bezier(.4,0,.2,1);
     }
     h1 {
-      font-size: 2.6rem;
-      font-weight: 700;
+      font-size: 2.5rem;
+      font-weight: bold;
       letter-spacing: -1px;
       margin-bottom: 0.5rem;
-      text-shadow: 0 2px 12px #000a;
-      background: linear-gradient(90deg, #64aaff 40%, #9f7aea 80%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 8px #000a;
     }
     .subtitle {
       color: #b1bad3;
       margin-bottom: 2rem;
-      font-size: 1.08rem;
-      font-weight: 500;
     }
-    main.games-list {
+    .games-list {
       display: flex;
       flex-direction: column;
       gap: 2rem;
       width: 100%;
-      animation: fadein 2s cubic-bezier(.4,0,.2,1);
     }
     .game-card {
-      background: rgba(36, 41, 69, 0.85);
-      border: 1.5px solid rgba(100, 170, 255, 0.14);
+      background: linear-gradient(120deg, #23243b 70%, #181823 100%);
+      border: 1px solid #313250;
       border-radius: 18px;
-      box-shadow: 0 8px 36px 0 #0005, 0 1.5px 3px #4361ee33;
-      backdrop-filter: blur(7px) saturate(1.2);
-      -webkit-backdrop-filter: blur(7px) saturate(1.2);
-      transition: 
-        box-shadow 0.22s,
-        transform 0.22s,
-        border-color 0.22s,
-        background 0.19s;
-      padding: 1.7rem 1.3rem;
+      box-shadow: 0 6px 18px 0 #0004;
+      transition: box-shadow 0.18s, transform 0.18s, border-color 0.18s;
+      padding: 1.5rem 1.2rem;
       display: block;
       text-decoration: none;
       color: inherit;
       position: relative;
-      cursor: pointer;
-      overflow: hidden;
-      opacity: 0;
-      animation: fadein 1.2s cubic-bezier(.4,0,.2,1) forwards;
     }
-    .game-card:nth-child(1) {animation-delay: 0.1s;}
-    .game-card:nth-child(2) {animation-delay: 0.22s;}
-    .game-card:nth-child(3) {animation-delay: 0.34s;}
     .game-card:hover, .game-card:focus {
-      box-shadow: 0 16px 40px #4361ee88, 0 2px 8px #0007;
-      border-color: #64aaff;
-      transform: translateY(-3px) scale(1.025);
-      background: rgba(60, 80, 169, 0.19);
+      box-shadow: 0 10px 32px #0007;
+      border-color: #4361ee;
+      transform: scale(1.02);
+      z-index: 1;
     }
     .game-title {
-      font-size: 1.38rem;
+      font-size: 1.35rem;
       font-weight: 700;
-      margin-bottom: 0.55rem;
+      margin-bottom: 0.5rem;
       color: #fff;
-      letter-spacing: -0.5px;
-      display: flex;
-      align-items: center;
-      gap: 0.6em;
     }
     .game-bio {
       white-space: pre-line;
-      color: #d4dfff;
+      color: #c2cfff;
       margin-bottom: 1.2rem;
       font-size: 1rem;
-      letter-spacing: 0.01em;
-    }
-    .game-link-wrapper {
-      display: inline-block;
-      position: relative;
     }
     .game-link {
       color: #64aaff;
       font-size: 1rem;
       font-weight: 600;
       text-decoration: underline;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4em;
-      transition: color 0.16s;
-      cursor: pointer;
-      position: relative;
-      z-index: 1;
-      background: none;
-      border: none;
-      padding: 0;
+      transition: color 0.15s;
     }
     .game-link:hover, .game-link:focus {
       color: #4361ee;
     }
-    /* Tooltip styles */
-    .tooltip {
-      visibility: hidden;
-      opacity: 0;
-      background: rgba(36, 41, 69, 0.96);
-      color: #fff;
-      text-align: center;
-      border-radius: 8px;
-      padding: 7px 16px;
-      position: absolute;
-      z-index: 10;
-      left: 50%;
-      bottom: 135%;
-      transform: translateX(-50%);
-      box-shadow: 0 4px 18px 0 #0005;
-      font-size: 0.97rem;
-      transition: opacity 0.22s cubic-bezier(.4,0,.2,1), visibility 0.22s cubic-bezier(.4,0,.2,1);
-      pointer-events: none;
-      white-space: nowrap;
-    }
-    .game-link-wrapper:hover .tooltip,
-    .game-link-wrapper:focus-within .tooltip {
-      visibility: visible;
-      opacity: 1;
-    }
-    .tooltip::after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      border-width: 7px;
-      border-style: solid;
-      border-color: rgba(36, 41, 69, 0.96) transparent transparent transparent;
-    }
-    .icon {
-      font-size: 1.2em;
-      vertical-align: middle;
-    }
-    .game-card:active::after {
-      content: '';
-      position: absolute;
-      left: 50%; top: 50%;
-      width: 200%; height: 200%;
-      background: radial-gradient(circle, #64aaff33 10%, transparent 70%);
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      animation: ripple .5s linear;
-    }
-    @keyframes ripple {
-      from {opacity: 1;}
-      to   {opacity: 0;}
-    }
-    @keyframes fadein {
-      from {opacity: 0; transform: translateY(20px);}
-      to   {opacity: 1; transform: none;}
-    }
     footer {
-      margin: 3rem 0 1rem 0;
+      margin: 2.5rem 0 1rem 0;
       text-align: center;
       color: #7e86a0;
-      font-size: 0.92rem;
-      letter-spacing: 0.01em;
-      animation: fadein 2.6s cubic-bezier(.4,0,.2,1);
+      font-size: 0.85rem;
     }
     @media (max-width: 600px) {
-      .container {padding: 1rem 0.3rem 0 0.3rem;}
-      .game-card {padding: 1.2rem 0.8rem;}
-      h1 {font-size: 2rem;}
+      .container {
+        padding: 1rem 0.3rem 0 0.3rem;
+      }
+      .game-card {
+        padding: 1rem 0.8rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
@@ -214,45 +113,27 @@
     </header>
     <main class="games-list">
       <a class="game-card" href="https://www.roblox.com/games/86461119960504/4-Person-FFA-MM2-in-Military-Map" target="_blank" rel="noopener noreferrer">
-        <div class="game-title">
-          <i class="ph ph-target icon" aria-hidden="true"></i>
-          4 Person FFA MM2 in Military Map
-        </div>
+        <div class="game-title">4 Person FFA MM2 in Military Map</div>
         <div class="game-bio">🔫 4-player action
 
 🪖 Set in the military map
 
 💥 endless action</div>
-        <span class="game-link-wrapper">
-          <span class="game-link" tabindex="0">Play on Roblox <i class="ph ph-arrow-up-right icon"></i></span>
-          <span class="tooltip">Go to the Roblox game page</span>
-        </span>
+        <div class="game-link">Play on Roblox &rarr;</div>
       </a>
       <a class="game-card" href="https://www.roblox.com/games/92285241804772/Sword-Battlegrounds-Beta" target="_blank" rel="noopener noreferrer">
-        <div class="game-title">
-          <i class="ph ph-sword icon" aria-hidden="true"></i>
-          Sword Battlegrounds Beta
-        </div>
+        <div class="game-title">Sword Battlegrounds Beta</div>
         <div class="game-bio">A Battleground Game With Swords Also in Beta Right Now</div>
-        <span class="game-link-wrapper">
-          <span class="game-link" tabindex="0">Play on Roblox <i class="ph ph-arrow-up-right icon"></i></span>
-          <span class="tooltip">Go to the Roblox game page</span>
-        </span>
+        <div class="game-link">Play on Roblox &rarr;</div>
       </a>
       <a class="game-card" href="https://www.roblox.com/games/134270993792448/OG-Roblox-8-Player-Free-For-All-in-Crossroads-Map" target="_blank" rel="noopener noreferrer">
-        <div class="game-title">
-          <i class="ph ph-cube icon" aria-hidden="true"></i>
-          OG Roblox 8 Player Free For All in Crossroads Map
-        </div>
+        <div class="game-title">OG Roblox 8 Player Free For All in Crossroads Map</div>
         <div class="game-bio">This is A OG Themed Roblox Crossroads Map With The Roblox Classic Sword, Roblox Classic Rocket lanuncher, And Finally The OG Roblox Boombox</div>
-        <span class="game-link-wrapper">
-          <span class="game-link" tabindex="0">Play on Roblox <i class="ph ph-arrow-up-right icon"></i></span>
-          <span class="tooltip">Go to the Roblox game page</span>
-        </span>
+        <div class="game-link">Play on Roblox &rarr;</div>
       </a>
     </main>
     <footer>
-      &copy; 2025 My Roblox Games &mdash; Designed with <span style="color:#f87171;">&#10084;</span>
+      &copy; 2025 My Roblox Games
     </footer>
   </div>
 </body>

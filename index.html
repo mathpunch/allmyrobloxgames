@@ -12,7 +12,6 @@
       margin: 0;
       font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
       color: #fff;
-      /* Animated background gradient */
       background: linear-gradient(-45deg, #23243b, #181823, #313250, #4361ee);
       background-size: 400% 400%;
       animation: gradientBG 16s ease infinite;
@@ -61,7 +60,6 @@
       width: 100%;
       animation: fadein 2s cubic-bezier(.4,0,.2,1);
     }
-    /* Glassmorphism card */
     .game-card {
       background: rgba(36, 41, 69, 0.85);
       border: 1.5px solid rgba(100, 170, 255, 0.14);
@@ -110,6 +108,10 @@
       font-size: 1rem;
       letter-spacing: 0.01em;
     }
+    .game-link-wrapper {
+      display: inline-block;
+      position: relative;
+    }
     .game-link {
       color: #64aaff;
       font-size: 1rem;
@@ -119,15 +121,55 @@
       align-items: center;
       gap: 0.4em;
       transition: color 0.16s;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+      background: none;
+      border: none;
+      padding: 0;
     }
     .game-link:hover, .game-link:focus {
       color: #4361ee;
+    }
+    /* Tooltip styles */
+    .tooltip {
+      visibility: hidden;
+      opacity: 0;
+      background: rgba(36, 41, 69, 0.96);
+      color: #fff;
+      text-align: center;
+      border-radius: 8px;
+      padding: 7px 16px;
+      position: absolute;
+      z-index: 10;
+      left: 50%;
+      bottom: 135%;
+      transform: translateX(-50%);
+      box-shadow: 0 4px 18px 0 #0005;
+      font-size: 0.97rem;
+      transition: opacity 0.22s cubic-bezier(.4,0,.2,1), visibility 0.22s cubic-bezier(.4,0,.2,1);
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .game-link-wrapper:hover .tooltip,
+    .game-link-wrapper:focus-within .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+    .tooltip::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 7px;
+      border-style: solid;
+      border-color: rgba(36, 41, 69, 0.96) transparent transparent transparent;
     }
     .icon {
       font-size: 1.2em;
       vertical-align: middle;
     }
-    /* Ripple effect on card click */
     .game-card:active::after {
       content: '';
       position: absolute;
@@ -181,7 +223,10 @@
 🪖 Set in the military map
 
 💥 endless action</div>
-        <div class="game-link">Play on Roblox <i class="ph ph-arrow-up-right icon"></i></div>
+        <span class="game-link-wrapper">
+          <span class="game-link" tabindex="0">Play on Roblox <i class="ph ph-arrow-up-right icon"></i></span>
+          <span class="tooltip">Go to the Roblox game page</span>
+        </span>
       </a>
       <a class="game-card" href="https://www.roblox.com/games/92285241804772/Sword-Battlegrounds-Beta" target="_blank" rel="noopener noreferrer">
         <div class="game-title">
@@ -189,7 +234,10 @@
           Sword Battlegrounds Beta
         </div>
         <div class="game-bio">A Battleground Game With Swords Also in Beta Right Now</div>
-        <div class="game-link">Play on Roblox <i class="ph ph-arrow-up-right icon"></i></div>
+        <span class="game-link-wrapper">
+          <span class="game-link" tabindex="0">Play on Roblox <i class="ph ph-arrow-up-right icon"></i></span>
+          <span class="tooltip">Go to the Roblox game page</span>
+        </span>
       </a>
       <a class="game-card" href="https://www.roblox.com/games/134270993792448/OG-Roblox-8-Player-Free-For-All-in-Crossroads-Map" target="_blank" rel="noopener noreferrer">
         <div class="game-title">
@@ -197,7 +245,10 @@
           OG Roblox 8 Player Free For All in Crossroads Map
         </div>
         <div class="game-bio">This is A OG Themed Roblox Crossroads Map With The Roblox Classic Sword, Roblox Classic Rocket lanuncher, And Finally The OG Roblox Boombox</div>
-        <div class="game-link">Play on Roblox <i class="ph ph-arrow-up-right icon"></i></div>
+        <span class="game-link-wrapper">
+          <span class="game-link" tabindex="0">Play on Roblox <i class="ph ph-arrow-up-right icon"></i></span>
+          <span class="tooltip">Go to the Roblox game page</span>
+        </span>
       </a>
     </main>
     <footer>

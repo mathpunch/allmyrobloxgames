@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Roblox Games</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #181823 60%, #23243b 100%);
+      min-height: 100vh;
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      color: #fff;
+    }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2rem 1rem 0 1rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      letter-spacing: -1px;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 8px #000a;
+    }
+    .subtitle {
+      color: #b1bad3;
+      margin-bottom: 2rem;
+    }
+    .games-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 100%;
+    }
+    .game-card {
+      background: linear-gradient(120deg, #23243b 70%, #181823 100%);
+      border: 1px solid #313250;
+      border-radius: 18px;
+      box-shadow: 0 6px 18px 0 #0004;
+      transition: box-shadow 0.18s, transform 0.18s, border-color 0.18s;
+      padding: 1.5rem 1.2rem;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+    }
+    .game-card:hover, .game-card:focus {
+      box-shadow: 0 10px 32px #0007;
+      border-color: #4361ee;
+      transform: scale(1.02);
+      z-index: 1;
+    }
+    .game-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+    .game-bio {
+      white-space: pre-line;
+      color: #c2cfff;
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+    .game-link {
+      color: #64aaff;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: underline;
+      transition: color 0.15s;
+    }
+    .game-link:hover, .game-link:focus {
+      color: #4361ee;
+    }
+    footer {
+      margin: 2.5rem 0 1rem 0;
+      text-align: center;
+      color: #7e86a0;
+      font-size: 0.85rem;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem 0.3rem 0 0.3rem;
+      }
+      .game-card {
+        padding: 1rem 0.8rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>My Roblox Games</h1>
+      <div class="subtitle">
+        Explore my collection of custom Roblox games!<br>
+        Tap a game to play or learn more.
+      </div>
+    </header>
+    <main class="games-list">
+      <a class="game-card" href="https://www.roblox.com/games/86461119960504/4-Person-FFA-MM2-in-Military-Map" target="_blank" rel="noopener noreferrer">
+        <div class="game-title">4 Person FFA MM2 in Military Map</div>
+        <div class="game-bio">🔫 4-player action
+
+🪖 Set in the military map
+
+💥 endless action</div>
+        <div class="game-link">Play on Roblox &rarr;</div>
+      </a>
+      <a class="game-card" href="https://www.roblox.com/games/92285241804772/Sword-Battlegrounds-Beta" target="_blank" rel="noopener noreferrer">
+        <div class="game-title">Sword Battlegrounds Beta</div>
+        <div class="game-bio">A Battleground Game With Swords Also in Beta Right Now</div>
+        <div class="game-link">Play on Roblox &rarr;</div>
+      </a>
+      <a class="game-card" href="https://www.roblox.com/games/134270993792448/OG-Roblox-8-Player-Free-For-All-in-Crossroads-Map" target="_blank" rel="noopener noreferrer">
+        <div class="game-title">OG Roblox 8 Player Free For All in Crossroads Map</div>
+        <div class="game-bio">This is A OG Themed Roblox Crossroads Map With The Roblox Classic Sword, Roblox Classic Rocket lanuncher, And Finally The OG Roblox Boombox</div>
+        <div class="game-link">Play on Roblox &rarr;</div>
+      </a>
+    </main>
+    <footer>
+      &copy; 2025 My Roblox Games
+    </footer>
+  </div>
+</body>
+</html>
